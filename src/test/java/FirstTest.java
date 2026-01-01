@@ -11,6 +11,9 @@ public class FirstTest {
 
         driver.get("https://www.google.com");
 
+        String title = driver.getTitle();
+        System.out.println("Page title is: " + title);
+
         System.out.println("Page title is: " + driver.getTitle());
 
         driver.quit();
