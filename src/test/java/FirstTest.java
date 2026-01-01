@@ -1,5 +1,6 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class FirstTest {
@@ -14,7 +15,11 @@ public class FirstTest {
         String title = driver.getTitle();
         System.out.println("Page title is: " + title);
 
-        System.out.println("Page title is: " + driver.getTitle());
+        Assert.assertTrue(title.contains("Google"),
+                "Title does not contain expected text");
+
+
+        //System.out.println("Page title is: " + driver.getTitle());
 
         driver.quit();
     }
