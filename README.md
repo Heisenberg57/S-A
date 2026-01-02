@@ -36,3 +36,16 @@ Mental Model -
 4) Observe result
    
 5) Assert
+
+Important Concepts
+--
+
+1. findElement - Finds one element, Throws exception if not found.
+   
+2. sendKeys - Types like a human.
+   
+3. submit - submits a form
+
+4. getTitle - Reads UI state for validation
+   
+5. Assertion - Confirms behaviour, not just action
