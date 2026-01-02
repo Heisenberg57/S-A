@@ -16,6 +16,9 @@ Tools used:
 ---
   
 1)Find elements reliably
+
 2)Type text (sendKeys)
+
 3)Click buttons
+
 4)Validate something on the page
