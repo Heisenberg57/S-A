@@ -22,3 +22,17 @@ Tools used:
 3)Click buttons
 
 4)Validate something on the page
+
+
+Mental Model - 
+----
+
+1) Go to a page
+   
+2) Locate elements
+   
+3) Interact (Type/click)
+   
+4) Observe result
+   
+5) Assert
