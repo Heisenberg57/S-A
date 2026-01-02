@@ -11,3 +11,11 @@ Tools used:
 - Selenium WebDriver
 - TestNG
 - Maven
+
+#Automation fundamentals : Locators basics.
+---
+  
+1)Find elements reliably
+2)Type text (sendKeys)
+3)Click buttons
+4)Validate something on the page
