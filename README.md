@@ -63,3 +63,9 @@ Points to remember :
 3. Difference between implicit wait and explicit wait
    
 4. How to fix flakeyness correctly.
+
+The Core Problem -
+--
+
+Selenium executes code like this.
+driver.findElement(...).click();
