@@ -88,4 +88,19 @@ So selenium says :
 
 I cant find / click this element yet and this is where wait comes in.
 
+The Worst Solution - 
+
+Thread.sleep(5000);
+--
+
+why thread.sleep is bad
+
+Always waits full time(even if element is ready earlier)
+Makes tests slow
+Fails on slow machines
+
+Sleeps = blind waiting
+
+
+
 
