@@ -101,6 +101,21 @@ Fails on slow machines
 
 Sleeps = blind waiting
 
+TYPES OF WAITS
+
+Implicit Wait
+
+driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+Meaning : For every findElement, wait up to 10 seconds.
+
+Implicit waits are 
+- easy
+- unpredictable
+- causes hidden delays
+- not recommended in modern frameworks  Many Teams avoid implicit waits
+
+
 
 
 
