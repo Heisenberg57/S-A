@@ -69,3 +69,16 @@ The Core Problem -
 
 Selenium executes code like this.
 driver.findElement(...).click();
+
+But the browser is 
+
+loading
+
+rendering
+
+running JS
+
+animating
+
+fetching data
+
