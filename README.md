@@ -82,3 +82,10 @@ animating
 
 fetching data
 
+Selenium is too fast.
+
+So selenium says :
+
+I cant find / click this element yet and this is where wait comes in.
+
+
