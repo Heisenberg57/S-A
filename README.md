@@ -116,6 +116,19 @@ Implicit waits are
 - not recommended in modern frameworks  Many Teams avoid implicit waits
 
 
+Explicit waits 
+
+WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+wait.until(ExpectedConditions.elementToBeClickable(locator));
+
+Meaning :
+
+Wait ONLY until this condition is met.
+
+Precise. Clean. Reliable.
+
+
+
 
 
 
