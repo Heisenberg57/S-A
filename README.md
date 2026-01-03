@@ -128,6 +128,19 @@ Wait ONLY until this condition is met.
 Precise. Clean. Reliable.
 
 
+Most Used ExpectedConditions:
+
+elementToBeClickable
+
+visibilityOfElementLocated
+
+presenceOfElementLocated
+
+titleContains
+
+urlContains
+
+
 
 
 
