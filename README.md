@@ -49,3 +49,17 @@ Important Concepts
 4. getTitle - Reads UI state for validation
    
 5. Assertion - Confirms behaviour, not just action
+
+
+Automation fundamentals : WAITS
+---------------------------
+
+Points to remember :
+
+1. Why Selenium is faster than the browser.
+   
+2. Why elements exist but are "not ready"
+   
+3. Difference between implicit wait and explicit wait
+   
+4. How to fix flakeyness correctly.
