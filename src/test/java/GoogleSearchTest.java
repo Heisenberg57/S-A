@@ -23,7 +23,8 @@ public class GoogleSearchTest {
         WebElement searchBox = driver.findElement(By.name("q"));
 
         //2. Type search text
-        searchBox.sendKeys("Selenium Webdriver");
+        String query = "Selenium WebDriver";
+        searchBox.sendKeys(query);
 
         //3. Submit search
         searchBox.submit();
@@ -31,9 +32,10 @@ public class GoogleSearchTest {
         // 4. Validate page title
         String title = driver.getTitle();
         System.out.println("Page title after search: " + title);
+        Assert.assertTrue(title.contains(query));
 
-        Assert.assertTrue(title.contains("Selenium WebDriver"),
-                "Search did not work as expected");
+//        Assert.assertTrue(title.contains("Selenium WebDriver"),
+//                "Search did not work as expected");
     }
 
     @AfterMethod
