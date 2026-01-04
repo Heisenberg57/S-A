@@ -18,7 +18,8 @@ public class GoogleSearchTest {
     }
 
     @Test
-    public void searchInGoogle(){
+    public void verifyGoogleSearchResultsContainQuery()
+    {
         //1. Locate search box
         WebElement searchBox = driver.findElement(By.name("q"));
 
