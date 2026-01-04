@@ -102,8 +102,10 @@ Fails on slow machines
 Sleeps = blind waiting
 
 TYPES OF WAITS
+--
 
 Implicit Wait
+-
 
 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
@@ -117,6 +119,7 @@ Implicit waits are
 
 
 Explicit waits 
+--
 
 WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 wait.until(ExpectedConditions.elementToBeClickable(locator));
