@@ -158,6 +158,23 @@ An Good automation engineer should be able to handle:
 4. The difference present, visible and clickable
 
 
+What "dynamic" truly means 
+
+A dynamic element is one that :
+
+1) is not immediately available.
+2) is added/updated by Javascript
+3) changes state after user action
+
+Examples:
+
+1) success / error messages.
+2) loading spinners.
+3) dropdown options
+4) enable/disable buttons.
+
+
+
 
 
 
