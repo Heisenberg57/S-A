@@ -144,6 +144,24 @@ titleContains
 urlContains
 
 
+Automation fundamentals : Handling Dynamic Elements & Sychronization.
+--
+
+An Good automation engineer should be able to handle:
+
+1. Elements that appear after clicking
+
+2. Messages that load with delay
+
+3. Dropdowns that update dynamically
+
+4. The difference present, visible and clickable
+
+
+
+
+
+
 
 
 
