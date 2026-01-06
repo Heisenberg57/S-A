@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class GoogleSearchTest {
+public class HerokuAppTests {
 
     WebDriver driver;
 
@@ -63,11 +63,28 @@ public class GoogleSearchTest {
 
         Assert.assertTrue(successMsg.contains("You logged into a secure area"),"Login was not successful");
 
-
-
-
-
     }
+
+
+    @Test
+
+    public void verifyDynamicContentLoads(){
+
+        driver.get("https://the-internet.herokuapp.com/dynamic_loading/1");
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+
+        driver.findElement(By.cssSelector("#start button")).click();
+
+        // Wait for loading to finish and content to appear
+        WebElement finishText = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(By.id("finish"))
+        );
+
+        Assert.assertTrue(finishText.getText().contains("Hello World!"),
+                "Dynamic content did not load correctly");
+    }
+
+
 
     @AfterMethod
     public void tearDown() {
