@@ -210,6 +210,20 @@ We waited for:
 visibility, not just presence
 actual UI readiness
 
+Key ExpectedConditions (Reinforce)
+
+presenceOfElementLocated - element exists in DOM
+
+visibilityOfElementLocated - element is visible
+
+elementToBeClickable - element can be clicked
+
+invisibilityOfElementLocated- loaders disappear
+
+
+
+
+
 
 
 
