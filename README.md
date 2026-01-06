@@ -200,6 +200,18 @@ Behaviour:
 3) Text appears after delay
 
 
+Incorrect conclusion : Element is not found - selenium issue
+
+Correct conclusion : I must wait for the correct condition
+
+
+We waited for:
+
+visibility, not just presence
+actual UI readiness
+
+
+
 
 
 
