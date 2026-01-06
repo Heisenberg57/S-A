@@ -102,8 +102,10 @@ Fails on slow machines
 Sleeps = blind waiting
 
 TYPES OF WAITS
+--
 
 Implicit Wait
+-
 
 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
@@ -117,6 +119,7 @@ Implicit waits are
 
 
 Explicit waits 
+--
 
 WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 wait.until(ExpectedConditions.elementToBeClickable(locator));
@@ -139,6 +142,106 @@ presenceOfElementLocated
 titleContains
 
 urlContains
+
+
+Automation fundamentals : Handling Dynamic Elements & Sychronization.
+--
+
+An Good automation engineer should be able to handle:
+
+1. Elements that appear after clicking
+
+2. Messages that load with delay
+
+3. Dropdowns that update dynamically
+
+4. The difference present, visible and clickable
+
+
+What "dynamic" truly means 
+
+A dynamic element is one that :
+
+1) is not immediately available.
+2) is added/updated by Javascript
+3) changes state after user action
+
+Examples:
+
+1) success / error messages.
+2) loading spinners.
+3) dropdown options
+4) enable/disable buttons.
+
+
+CASE 1 - Dynamic Message After Login.(Reinforce Good Practise).
+
+wait.until(ExpectedConditions.visibilityOfElement(By.id("flash")));
+
+Why this matters:
+
+1) element exists only after login
+   
+2) visibility tells you UI is ready
+   
+3) assertion becomes stable
+
+
+CASE 2 - Dynamic Content (Appears After Click)
+
+Page : https://the-internet.herokuapp.com/dynamic_loading/1
+
+Behaviour:
+
+1) Click "Start"
+ 
+2) Loader shows
+   
+3) Text appears after delay
+
+
+Incorrect conclusion : Element is not found - selenium issue
+
+Correct conclusion : I must wait for the correct condition
+
+
+We waited for:
+
+visibility, not just presence
+actual UI readiness
+
+Key ExpectedConditions (Reinforce)
+
+1) presenceOfElementLocated - element exists in DOM
+
+2) visibilityOfElementLocated - element is visible
+
+3) elementToBeClickable - element can be clicked
+
+4) invisibilityOfElementLocated- loaders disappear
+
+
+CASE 3 : Enable/Disable Elements
+
+Page : https://the-internet.herokuapp.com/dynamic_controls
+
+Behaviour :
+
+Checkbox removed/added dynamically
+
+Button becomes enabled later
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
