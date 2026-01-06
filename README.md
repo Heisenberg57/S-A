@@ -212,13 +212,13 @@ actual UI readiness
 
 Key ExpectedConditions (Reinforce)
 
-presenceOfElementLocated - element exists in DOM
+1) presenceOfElementLocated - element exists in DOM
 
-visibilityOfElementLocated - element is visible
+2) visibilityOfElementLocated - element is visible
 
-elementToBeClickable - element can be clicked
+3) elementToBeClickable - element can be clicked
 
-invisibilityOfElementLocated- loaders disappear
+4) invisibilityOfElementLocated- loaders disappear
 
 
 
