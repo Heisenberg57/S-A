@@ -221,6 +221,18 @@ Key ExpectedConditions (Reinforce)
 4) invisibilityOfElementLocated- loaders disappear
 
 
+CASE 3 : Enable/Disable Elements
+
+Page : https://the-internet.herokuapp.com/dynamic_controls
+
+Behaviour :
+
+Checkbox removed/added dynamically
+
+Button becomes enabled later
+
+
+
 
 
 
