@@ -174,6 +174,20 @@ Examples:
 4) enable/disable buttons.
 
 
+CASE 1 - Dynamic Message After Login.(Reinforce Good Practise).
+
+wait.until(ExpectedConditions.visibilityOfElement(By.id("flash")));
+
+Why this matters:
+
+1) element exists only after login
+   
+2) visibility tells you UI is ready
+   
+3) assertion becomes stable
+
+
+
 
 
 
