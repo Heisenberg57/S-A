@@ -187,6 +187,19 @@ Why this matters:
 3) assertion becomes stable
 
 
+CASE 2 - Dynamic Content (Appears After Click)
+
+Page : https://the-internet.herokuapp.com/dynamic_loading/1
+
+Behaviour:
+
+1) Click "Start"
+ 
+2) Loader shows
+   
+3) Text appears after delay
+
+
 
 
 
