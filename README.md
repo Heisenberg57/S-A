@@ -232,6 +232,30 @@ Checkbox removed/added dynamically
 Button becomes enabled later
 
 
+Automation fundamentals : Alerts, Popups & Browser Controls
+--
+
+1) JavaScript alerts (alert/confirm/prompt)
+2) Accepting / dismissing popups
+3) Browser navigation (back/forward/refresh)
+4) Understanding context ( DOM vs Alert vs Window)
+
+Core Concept (Very Important)
+--
+
+Selenium can only talk to one context at a time.
+
+Contexts include
+
+Web Page (DOM)
+Alert popup
+Browser window tab
+
+
+If you dont switch context - Selenium throws error
+
+
+
 
 
 
