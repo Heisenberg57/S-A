@@ -1,3 +1,4 @@
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -97,6 +98,22 @@ public class HerokuAppTests {
         inputBox.sendKeys("Now I can type");
 
         Assert.assertTrue(inputBox.isEnabled(), "Input box is not enabled");
+
+    }
+
+    @Test
+    public void handleSimpleAlert(){
+        driver.get("https://the-internet.herokuapp.com/javascript_alerts");
+        driver.findElement(By.xpath("//button[text()='Click for JS Alert']")).click();
+        Alert alert = driver.switchTo().alert();
+
+        String alertText = alert.getText();
+        System.out.println("Alert text: " + alertText);
+
+        alert.accept();
+
+        String result = driver.findElement(By.id("result")).getText();
+        Assert.assertTrue(result.contains("You successfully clicked an alert"));
 
     }
 
