@@ -256,6 +256,43 @@ If you dont switch context - Selenium throws error
 
 
 
+Part 1 : JavaScript Alerts (Most Common)
+--
+
+https://the-internet.herokuapp.com/javascript_alerts
+
+
+Simple Alert (alert())
+
+Behaviour :
+
+Click button
+Alert Appears
+Must click OK
+
+In code: 
+1)get url
+2)find JS alert by xpath and click on it
+3) create alert object and define - driver.
+4) get alert text
+5) click on alert accept
+6) get string result text
+7) assert it
+
+Key rule
+--
+
+If an alert is present:
+
+Selenium cannot interact with the page
+
+You MUST handle the alert first
+
+Otherwise → UnhandledAlertException
+
+
+
+
 
 
 
