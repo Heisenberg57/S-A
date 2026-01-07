@@ -308,6 +308,23 @@ In code example:
 6) assert the text result
 
 
+PART 3 — Prompt Popup (prompt())
+--
+
+Prompt allows typing text.
+
+1) get url
+2) find the locator for prompt alert and click on it.
+3) Create an alert object
+3) send keys "automation"
+4) use accept function
+5) find locator for result and get text
+6) assert the text result
+
+
+
+
+
 
 
 
