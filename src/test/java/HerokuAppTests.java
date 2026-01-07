@@ -84,6 +84,22 @@ public class HerokuAppTests {
                 "Dynamic content did not load correctly");
     }
 
+    @Test
+
+    public void waitForButtonToEnable(){
+        driver.get("https://the-internet.herokuapp.com/dynamic_controls");
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+        WebElement enableButton = driver.findElement(By.xpath("//button[text()='Enable']"));
+        enableButton.click();
+
+        WebElement inputBox = driver.findElement(By.cssSelector("#input-example input"));
+        wait.until(ExpectedConditions.elementToBeClickable(inputBox));
+        inputBox.sendKeys("Now I can type");
+
+        Assert.assertTrue(inputBox.isEnabled(), "Input box is not enabled");
+
+    }
+
 
 
     @AfterMethod
