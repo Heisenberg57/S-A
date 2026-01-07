@@ -291,6 +291,24 @@ You MUST handle the alert first
 Otherwise → UnhandledAlertException
 
 
+Part 2 : Confirm Popup (confirm())
+
+Confirm dialogs have:
+
+OK
+Cancel
+
+In code example:
+
+1) get url
+2) find the locator for JS confirm and click on it.
+3) Create an alert object
+4) click on dismissing
+5) find locator for result and get text
+6) assert the text result
+
+
+
 
 
 
