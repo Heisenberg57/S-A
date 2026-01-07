@@ -322,6 +322,26 @@ Prompt allows typing text.
 6) assert the text result
 
 
+Part 4 - Browser Navigation (Very Real)
+--
+
+Used in :
+Back Button flows
+Multi-page journeys
+Retry Scenarios
+
+steps:
+--
+
+1) get url
+2) Find locator for Form Authentication and perform click action
+3) then navigate to back
+4) then navigate forward
+5) then navigate refresh
+6) Assert the title text
+
+
+
 
 
 
