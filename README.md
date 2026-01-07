@@ -232,6 +232,122 @@ Checkbox removed/added dynamically
 Button becomes enabled later
 
 
+Automation fundamentals : Alerts, Popups & Browser Controls
+--
+
+1) JavaScript alerts (alert/confirm/prompt)
+2) Accepting / dismissing popups
+3) Browser navigation (back/forward/refresh)
+4) Understanding context ( DOM vs Alert vs Window)
+
+Core Concept (Very Important)
+--
+
+Selenium can only talk to one context at a time.
+
+Contexts include
+
+Web Page (DOM)
+Alert popup
+Browser window tab
+
+
+If you dont switch context - Selenium throws error
+
+
+
+Part 1 : JavaScript Alerts (Most Common)
+--
+
+https://the-internet.herokuapp.com/javascript_alerts
+
+
+Simple Alert (alert())
+
+Behaviour :
+
+Click button
+Alert Appears
+Must click OK
+
+In code: 
+1)get url
+2)find JS alert by xpath and click on it
+3) create alert object and define - driver.
+4) get alert text
+5) click on alert accept
+6) get string result text
+7) assert it
+
+Key rule
+--
+
+If an alert is present:
+
+Selenium cannot interact with the page
+
+You MUST handle the alert first
+
+Otherwise → UnhandledAlertException
+
+
+Part 2 : Confirm Popup (confirm())
+
+Confirm dialogs have:
+
+OK
+Cancel
+
+In code example:
+
+1) get url
+2) find the locator for JS confirm and click on it.
+3) Create an alert object
+4) click on dismissing
+5) find locator for result and get text
+6) assert the text result
+
+
+PART 3 — Prompt Popup (prompt())
+--
+
+Prompt allows typing text.
+
+1) get url
+2) find the locator for prompt alert and click on it.
+3) Create an alert object
+3) send keys "automation"
+4) use accept function
+5) find locator for result and get text
+6) assert the text result
+
+
+Part 4 - Browser Navigation (Very Real)
+--
+
+Used in :
+Back Button flows
+Multi-page journeys
+Retry Scenarios
+
+steps:
+--
+
+1) get url
+2) Find locator for Form Authentication and perform click action
+3) then navigate to back
+4) then navigate forward
+5) then navigate refresh
+6) Assert the title text
+
+
+
+
+
+
+
+
+
 
 
 
