@@ -341,6 +341,113 @@ steps:
 6) Assert the title text
 
 
+Part 5 : Multiple Windows/Tabs
+
+Page: https://the-internet.herokuapp.com/windows
+
+Steps:
+
+1)Create a String variable for parentWindow.
+2)for loop - switch to particular window
+3)assert if we are on the selected window
+4)switch back to parent window
+
+Automation fundamentals : Page Object Model (POM) Why Frameworks Exist
+--
+
+1) Why mixing locators + test logic is a problem
+2) What a Page Object actually represents 
+3) How POM reduces breakage when UI changes
+4) How tests become readable and boring
+
+
+The real problem POM solves 
+--
+
+Problems:
+
+1) Locators are everywhere
+2) UI Change = edit 20 files
+3) Tests are unreadable
+4) High maintenance cost
+
+Frameworks exists to reduce pain, not add complexity
+
+The core idea of POM :
+--
+
+Each Page : one class
+Each user action : one method
+
+Thats it. Nothing more mystical.
+
+
+step - 1
+--
+
+Page/site we are using for example.
+
+https://the-internet.herokuapp.com/login
+
+This page has
+
+username field
+password field 
+login button
+result message
+
+step -2
+--
+
+steps in the actual example:
+
+1) create a loginPage class - representating login page
+2) for locators create private variables
+3) create a constructor for the class
+4) For page actions - write separate method :
+	1) enter username 
+	2) enter password
+	3) click login
+	4) get flash messge
+	
+importants points to remember : 
+
+1. No @Tests here
+2. No Assertions
+3. Only page behaviour
+
+step 3 : Write a clean Test using the page.
+--
+
+1) create a logintest class.
+2) create driver object, and a loginpage object
+3) write @beforemethod setup()
+4) write actual test loginwith validCredentials()
+		1) enter username 
+		2) enter password
+		3) click login
+		4) take flash message as string variables
+		5) assert that message using AssertTrue
+5) write @aftermethod , write teardown() logic
+
+
+Best parts about this approach:
+-
+
+1) Tests now read like english sentences.
+2) UI changes are isolated.
+3) Tests focus on behaviour, not behaviour
+
+
+What lives where:
+-
+
+Test - What to test
+Page - How to interact
+Selenium - How browser works
+
+
+
 
 
 
