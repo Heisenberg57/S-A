@@ -382,6 +382,53 @@ Each user action : one method
 Thats it. Nothing more mystical.
 
 
+step - 1
+--
+
+Page/site we are using for example.
+
+https://the-internet.herokuapp.com/login
+
+This page has
+
+username field
+password field 
+login button
+result message
+
+step -2
+--
+
+steps in the actual example:
+
+1) create a loginPage class - representating login page
+2) for locators create private variables
+3) create a constructor for the class
+4) For page actions - write separate method :
+	1) enter username 
+	2) enter password
+	3) click login
+	4) get flash messge
+	
+importants points to remember : 
+
+1. No @Tests here
+2. No Assertions
+3. Only page behaviour
+
+step 3 : Write a clean Test using the page.
+--
+
+1) create a logintest class.
+2) create driver object, and a loginpage object
+3) write @beforemethod setup()
+4) write actual test loginwith validCredentials()
+		1) enter username 
+		2) enter password
+		3) click login
+		4) take flash message as string variables
+		5) assert that message using AssertTrue
+5) write @aftermethod , write teardown() logic
 
 
 
