@@ -431,6 +431,23 @@ step 3 : Write a clean Test using the page.
 5) write @aftermethod , write teardown() logic
 
 
+Best parts about this approach:
+-
+
+1) Tests now read like english sentences.
+2) UI changes are isolated.
+3) Tests focus on behaviour, not behaviour
+
+
+What lives where:
+-
+
+Test - What to test
+Page - How to interact
+Selenium - How browser works
+
+
+
 
 
 
