@@ -157,6 +157,19 @@ public class HerokuAppTests {
         Assert.assertTrue(driver.getTitle().contains("The Internet"));
     }
 
+    @Test
+    public void windowHandleNavigation(){
+        driver.get("https://the-internet.herokuapp.com/windows");
+        String parentWindow = driver.getWindowHandle();
+
+        for(String window: driver.getWindowHandles()){
+            driver.switchTo().window(window);
+        }
+
+        Assert.assertTrue(driver.getPageSource().contains("New Window"));
+        driver.switchTo().window(parentWindow);
+    }
+
 
 
     @AfterMethod
