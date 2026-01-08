@@ -117,6 +117,46 @@ public class HerokuAppTests {
 
     }
 
+    @Test
+
+    public void handleConfirmAlert(){
+        driver.get("https://the-internet.herokuapp.com/javascript_alerts");
+        driver.findElement(By.xpath("//button[text()='Click for JS Confirm']")).click();
+
+        Alert alert = driver.switchTo().alert();
+        alert.dismiss();
+
+        String result = driver.findElement(By.id("result")).getText();
+        Assert.assertTrue(result.contains("You clicked: Cancel"));
+    }
+
+    @Test
+
+    public void handlePromptAlert(){
+        driver.get("https://the-internet.herokuapp.com/javascript_alerts");
+        driver.findElement(By.xpath("//button[text()='Click for JS Prompt']")).click();
+
+        Alert alert = driver.switchTo().alert();
+        alert.sendKeys("Automation");
+        alert.accept();
+
+        String result = driver.findElement(By.id("result")).getText();
+        Assert.assertTrue(result.contains("Automation"));
+    }
+
+    @Test
+
+    public void browserNavigation(){
+        driver.get("https://the-internet.herokuapp.com");
+        driver.findElement(By.linkText("Form Authentication")).click();
+
+        driver.navigate().back();
+        driver.navigate().forward();
+        driver.navigate().refresh();
+
+        Assert.assertTrue(driver.getTitle().contains("The Internet"));
+    }
+
 
 
     @AfterMethod
