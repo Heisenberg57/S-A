@@ -352,6 +352,36 @@ Steps:
 3)assert if we are on the selected window
 4)switch back to parent window
 
+Automation fundamentals : Page Object Model (POM) Why Frameworks Exist
+--
+
+1) Why mixing locators + test logic is a problem
+2) What a Page Object actually represents 
+3) How POM reduces breakage when UI changes
+4) How tests become readable and boring
+
+
+The real problem POM solves 
+--
+
+Problems:
+
+1) Locators are everywhere
+2) UI Change = edit 20 files
+3) Tests are unreadable
+4) High maintenance cost
+
+Frameworks exists to reduce pain, not add complexity
+
+The core idea of POM :
+--
+
+Each Page : one class
+Each user action : one method
+
+Thats it. Nothing more mystical.
+
+
 
 
 
