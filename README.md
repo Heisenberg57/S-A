@@ -341,6 +341,19 @@ steps:
 6) Assert the title text
 
 
+Part 5 : Multiple Windows/Tabs
+
+Page: https://the-internet.herokuapp.com/windows
+
+Steps:
+
+1)Create a String variable for parentWindow.
+2)for loop - switch to particular window
+3)assert if we are on the selected window
+4)switch back to parent window
+
+
+
 
 
 
