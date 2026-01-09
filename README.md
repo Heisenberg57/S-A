@@ -447,6 +447,84 @@ Page - How to interact
 Selenium - How browser works
 
 
+Automation Fundamentals : BaseTest & Driver Management 
+--
+
+Key points 
+--
+
+- Remove duplicate/teardown code
+- Centralize WebDriver Lifecycle
+- Make tests thinner and cleaner
+- Prepare ground for parallel runs & configs
+
+This is what seniors expect next after DOM.
+
+Right now, every test has this.
+- @BeforeMethod and @AfterMethod 
+
+Problems with these:
+--
+
+1) Duplicated everywhere
+2) error-prone
+3) hard to change browser later
+4) ugly when test count grows
+
+The core idea indicates that : All tests share the same setup logic > move it to a base class.
+
+Tests will inherit setup instead of re writing it.
+
+Step 1 : BaseTest.java
+--
+
+1) create class BaseTest
+2) create protected object of WebDriver - driver
+3) Write @BeforeMethod for setup
+4) Write @AfterMethod for teardown
+
+Important points :
+--
+
+protected - child tests can access driver
+
+setup/teardown live once
+
+safety check before quit()
+
+Step 2 : Update your Test to extend BaseTest and keep only @Test part remove @BeforeMethod & @AfterMethod
+--
+
+public class LoginTest extends BaseTest {
+
+
+This will Make things easier - 
+No setup code here
+No teardown code here
+Test focuses ONLY on behaviour
+
+- That is professional automation
+
+Why This design is POWERFUL & BEAUTIFUL
+--
+
+1) One place to change the browser
+2) Easier Debugging
+3) Clean Tests
+
+How this Scales in Real Projects
+--
+
+browser choice (config-driven)
+
+implicit waits (if any)
+
+screenshots on failure
+
+logging setup
+
+
+
 
 
 
