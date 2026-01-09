@@ -447,6 +447,35 @@ Page - How to interact
 Selenium - How browser works
 
 
+Automation Fundamentals : BaseTest & Driver Management 
+--
+
+Key points 
+--
+
+- Remove duplicate/teardown code
+- Centralize WebDriver Lifecycle
+- Make tests thinner and cleaner
+- Prepare ground for parallel runs & configs
+
+This is what seniors expect next after DOM.
+
+Right now, every test has this.
+- @BeforeMethod and @AfterMethod 
+
+Problems with these:
+--
+
+1) Duplicated everywhere
+2) error-prone
+3) hard to change browser later
+4) ugly when test count grows
+
+The core idea indicates that : All tests share the same setup logic > move it to a base class.
+
+Tests will inherit setup instead of re writing it.
+
+
 
 
 
