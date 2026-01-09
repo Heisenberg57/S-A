@@ -516,8 +516,11 @@ How this Scales in Real Projects
 --
 
 browser choice (config-driven)
+
 implicit waits (if any)
+
 screenshots on failure
+
 logging setup
 
 
