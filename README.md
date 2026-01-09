@@ -475,6 +475,21 @@ The core idea indicates that : All tests share the same setup logic > move it to
 
 Tests will inherit setup instead of re writing it.
 
+Step 1 : BaseTest.java
+--
+
+1) create class BaseTest
+2) create protected object of WebDriver - driver
+3) Write @BeforeMethod for setup
+4) Write @AfterMethod for teardown
+
+Important points :
+--
+
+protected - child tests can access driver
+setup/teardown live once
+safety check before quit()
+
 
 
 
