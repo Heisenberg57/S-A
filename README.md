@@ -487,8 +487,23 @@ Important points :
 --
 
 protected - child tests can access driver
+
 setup/teardown live once
+
 safety check before quit()
+
+Step 2 : Update your Test to extend BaseTest and keep only @Test part remove @BeforeMethod & @AfterMethod
+--
+
+public class LoginTest extends BaseTest {
+
+
+This will Make things easier - 
+No setup code here
+No teardown code here
+Test focuses ONLY on behaviour
+
+- That is professional automation
 
 
 
