@@ -505,6 +505,22 @@ Test focuses ONLY on behaviour
 
 - That is professional automation
 
+Why This design is POWERFUL & BEAUTIFUL
+--
+
+1) One place to change the browser
+2) Easier Debugging
+3) Clean Tests
+
+How this Scales in Real Projects
+--
+
+browser choice (config-driven)
+implicit waits (if any)
+screenshots on failure
+logging setup
+
+
 
 
 
