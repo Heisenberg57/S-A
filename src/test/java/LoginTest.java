@@ -21,12 +21,15 @@ public class LoginTest {
 
     @Test
     public void loginWithValidCredentials(){
-        loginPage.enterUsername("tosmith");
+        loginPage.enterUsername("tomsmith");
         loginPage.enterpassword("SuperSecretPassword!");
         loginPage.clickLogin();
 
         String message = loginPage.getFlashMessage();
-        Assert.assertTrue(message.contains("You logged into a secure area"),"Login was not successful");
+        Assert.assertTrue(message.contains("You logged into a secure area"),
+                "Login was not successful");
+
+
     }
 
     @AfterMethod
