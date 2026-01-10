@@ -16,8 +16,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void loginWithValidCredentials(){
-        driver.get("https://the-internet.herokuapp.com/login");
-        LoginPage loginPage = new LoginPage(driver);
+        LoginPage loginPage = new LoginPage(driver,baseUrl);
 
         loginPage.enterUsername("tomsmith");
         loginPage.enterpassword("SuperSecretPassword!");

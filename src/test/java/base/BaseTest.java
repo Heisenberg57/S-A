@@ -7,6 +7,7 @@ import org.testng.annotations.BeforeMethod;
 
 public class BaseTest {
     protected WebDriver driver;
+    protected String baseUrl = "https://the-internet.herokuapp.com";
 
     @BeforeMethod
     public void setUp(){

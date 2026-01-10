@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
     WebDriver driver;
+    private static final String LOGIN_PATH = "/login";
 
     //Locators - UI info here
     private By usernameInput = By.id("username");
@@ -13,8 +14,9 @@ public class LoginPage {
     private By flashMessage = By.id("flash");
 
     //constructor
-    public LoginPage(WebDriver driver){
+    public LoginPage(WebDriver driver,String baseUrl){
         this.driver=driver;
+        driver.get(baseUrl+LOGIN_PATH);
     }
 
     //Page Actions(business logic)
