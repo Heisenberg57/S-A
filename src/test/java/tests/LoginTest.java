@@ -1,5 +1,6 @@
 package tests;
 
+import base.BaseTest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.slf4j.Logger;
@@ -10,20 +11,14 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 
-public class LoginTest {
-    private static final Logger log = LoggerFactory.getLogger(LoginTest.class);
-    WebDriver driver;
-    LoginPage loginPage;
+public class LoginTest extends BaseTest {
 
-    @BeforeMethod
-    public void setUp(){
-        driver = new ChromeDriver();
-        driver.get("https://the-internet.herokuapp.com/login");
-        loginPage = new LoginPage(driver);
-    }
 
     @Test
     public void loginWithValidCredentials(){
+        driver.get("https://the-internet.herokuapp.com/login");
+        LoginPage loginPage = new LoginPage(driver);
+
         loginPage.enterUsername("tomsmith");
         loginPage.enterpassword("SuperSecretPassword!");
         loginPage.clickLogin();
@@ -35,8 +30,4 @@ public class LoginTest {
 
     }
 
-    @AfterMethod
-    public void tearDown() {
-        driver.quit();
-    }
 }
