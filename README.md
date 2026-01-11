@@ -555,6 +555,19 @@ waitForTitleContains method with text parameter
 6. Clean Readable API
 
 
+Step 2 : Inject WaitUtils into Page Objects.
+--
+
+Before: LoginPage.java code had wait code added randomely.
+
+After : clean and professional , add wait as utils.
+
+This approach improves a lot of stuff - 
+
+Pages are readable
+One timeout to rule them all
+Consistent waits
+
 
 
 
