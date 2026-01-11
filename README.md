@@ -524,6 +524,39 @@ screenshots on failure
 logging setup
 
 
+Automation fundamentals : WaitUtils
+--
+
+Problems with adding waits randomely in the script.
+
+1) Duplicated everywhere
+2) Inconsistent timeouts
+3) Hard to change globally
+4) Pages look noisy 
+
+**Core Idea being that** - Waiting is infrastructure , not page logic  --> centralize it.
+Pages should say what they want, not how to wait.
+
+
+STEP 1 - Create WaitUtils
+--
+
+path - src/test/java/WaitUtils.java
+
+
+Steps:
+
+1. Create public class waitutils
+2. Create two objects - WebDriver and WebdriverWait
+3. Create Constructor WaitUtils that adds a 10 seconds wait
+4. Create waitForVisibility , waitForClickability,waitForInvisibility methods with locator parameter & 
+waitForTitleContains method with text parameter
+5. And return meaningful things - WebElement, boolean
+6. Clean Readable API
+
+
+
+
 
 
 
