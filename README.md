@@ -597,7 +597,16 @@ Thats where test NG Listeners come into picture
 
 
 
+Step 1 - Create Screenshot Utility
+--
 
+ - src/test/java/utils/
+ 
+Notes - 
+
+Static Utility - easy reuse
+Timestamp - avoids overwrite
+Folder auto - created
 
 
 
