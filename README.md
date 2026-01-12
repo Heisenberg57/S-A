@@ -619,6 +619,16 @@ Cast to BaseTest
 Access driver
 Take screenshot
 
+Step 3 - Register Listener
+--
+Use @Listener
+
+@Listeners(TestListener.class)
+public class LoginTest extends BaseTest {
+    // tests
+}
+
+
 
 
 
