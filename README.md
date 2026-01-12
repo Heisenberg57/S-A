@@ -569,6 +569,33 @@ One timeout to rule them all
 Consistent waits
 
 
+Automation Fundamentals : Screenshots on failure
+--
+
+When test fails on:
+
+1) Jenkins
+2) CI
+3) someone else's machine
+
+You wont see the browser
+
+Your first question will be :
+
+What did UI look like when it failed - Screenshots answer this instantly
+
+Core Idea - Simple
+--
+
+When a test fails - automatically captures screenshot - save it
+
+this I should happen:
+
+1) without changing test code
+2) without adding try/catch everywhere
+Thats where test NG Listeners come into picture
+
+
 
 
 
