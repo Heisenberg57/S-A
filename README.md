@@ -609,6 +609,18 @@ Timestamp - avoids overwrite
 Folder auto - created
 
 
+Step 2 - Create TestNG Listener
+--
+
+TestListener.java
+
+Listner gets test instance 
+Cast to BaseTest
+Access driver
+Take screenshot
+
+
+
 
 
 
