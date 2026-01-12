@@ -569,6 +569,64 @@ One timeout to rule them all
 Consistent waits
 
 
+Automation Fundamentals : Screenshots on failure
+--
+
+When test fails on:
+
+1) Jenkins
+2) CI
+3) someone else's machine
+
+You wont see the browser
+
+Your first question will be :
+
+What did UI look like when it failed - Screenshots answer this instantly
+
+Core Idea - Simple
+--
+
+When a test fails - automatically captures screenshot - save it
+
+this I should happen:
+
+1) without changing test code
+2) without adding try/catch everywhere
+Thats where test NG Listeners come into picture
+
+
+
+Step 1 - Create Screenshot Utility
+--
+
+ - src/test/java/utils/
+ 
+Notes - 
+
+Static Utility - easy reuse
+Timestamp - avoids overwrite
+Folder auto - created
+
+
+Step 2 - Create TestNG Listener
+--
+
+TestListener.java
+
+Listner gets test instance 
+Cast to BaseTest
+Access driver
+Take screenshot
+
+Step 3 - Register Listener
+--
+Use @Listener
+
+@Listeners(TestListener.class)
+public class LoginTest extends BaseTest {
+    // tests
+}
 
 
 
