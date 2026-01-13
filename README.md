@@ -678,6 +678,21 @@ public void setUp(){
 Right now chrome is hardcoded - thats intentional
 
 
+Step 3 Verify it works
+--
+
+Run any Test
+Tests should pass
+now change chrome to firefox
+After running again, firefox should open.
+
+key improvements by this approach
+--
+
+browser creation decoupled
+BaseTest simplified
+future CI-ready design
+zero test changes
 
 
 
