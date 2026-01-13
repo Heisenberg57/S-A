@@ -1,5 +1,6 @@
 package base;
 
+import factory.DriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -11,7 +12,10 @@ public class BaseTest {
 
     @BeforeMethod
     public void setUp(){
-        driver = new ChromeDriver();
+//        driver = new ChromeDriver();
+//        driver.manage().window().maximize();  old hard coded setup for driver
+
+        driver= DriverFactory.createDriver("chrome");
         driver.manage().window().maximize();
     }
 
