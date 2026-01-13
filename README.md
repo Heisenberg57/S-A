@@ -629,6 +629,77 @@ public class LoginTest extends BaseTest {
 }
 
 
+Automation Fundamentals : DriverFactory
+--
+
+As of now, browser creation is here
+
+driver = new ChromeDriver();
+
+problems:
+--
+
+1. Hardcoded browser
+2. Cant switch without code change
+3. CI / Jenkins cant control it
+4. BaseTest becomes bloated over time
+
+
+Every real framework solves this with a DriverFactory.
+
+BasTest should ask for driver, not decide how its created
+
+Creation Logic Goes to driverfactory.
+
+
+Step 1 Create DriverFactory.java
+--
+
+src/test/java/factory/DriverFactory.java
+
+- Single responsibility : create driver
+- no TestNG here
+- no BaseTest here
+- simple & readable
+
+
+Step 2 Update BaseTest to use DriverFactor
+--
+
+Updated BaseTest.java
+
+@BeforeMethod
+
+public void setUp(){
+	driver = DriverFactory.createDriver("chrome");
+	driver.manage().window().maximize();
+}
+
+Right now chrome is hardcoded - thats intentional
+
+
+Step 3 Verify it works
+--
+
+Run any Test
+Tests should pass
+now change chrome to firefox
+After running again, firefox should open.
+
+key improvements by this approach
+--
+
+browser creation decoupled
+BaseTest simplified
+future CI-ready design
+zero test changes
+
+
+
+
+
+
+
 
 
 
