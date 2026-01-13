@@ -652,6 +652,20 @@ BasTest should ask for driver, not decide how its created
 Creation Logic Goes to driverfactory.
 
 
+Step 1 Create DriverFactory.java
+--
+
+src/test/java/factory/DriverFactory.java
+
+- Single responsibility : create driver
+- no TestNG here
+- no BaseTest here
+- simple & readable
+
+
+
+
+
 
 
 
