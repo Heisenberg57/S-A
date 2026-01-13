@@ -629,6 +629,29 @@ public class LoginTest extends BaseTest {
 }
 
 
+Automation Fundamentals : DriverFactory
+--
+
+As of now, browser creation is here
+
+driver = new ChromeDriver();
+
+problems:
+--
+
+1. Hardcoded browser
+2. Cant switch without code change
+3. CI / Jenkins cant control it
+4. BaseTest becomes bloated over time
+
+
+Every real framework solves this with a DriverFactory.
+
+BasTest should ask for driver, not decide how its created
+
+Creation Logic Goes to driverfactory.
+
+
 
 
 
