@@ -663,6 +663,25 @@ src/test/java/factory/DriverFactory.java
 - simple & readable
 
 
+Step 2 Update BaseTest to use DriverFactor
+--
+
+Updated BaseTest.java
+
+@BeforeMethod
+
+public void setUp(){
+	driver = DriverFactory.createDriver("chrome");
+	driver.manage().window().maximize();
+}
+
+Right now chrome is hardcoded - thats intentional
+
+
+
+
+
+
 
 
 
