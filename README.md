@@ -720,6 +720,40 @@ Config = environment & data
 Java should read config, not contain it
 
 
+Step 1 - Create config.properties
+--
+
+Path - src/test/resources/config.properties
+
+
+config.properties
+
+# Browser
+
+browser = chrome
+
+# Environment
+
+baseUrl = https://the-internet.herokuapp.com
+
+# Credentials
+
+username = tosmith
+password = SuperSecretPassword!
+
+# Wait
+
+explicitWait = 10
+
+
+
+Notes : 
+Simple key=value
+No quotes
+Human-readable
+CI-friendly
+
+
 
 
 
