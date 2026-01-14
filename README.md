@@ -694,6 +694,34 @@ BaseTest simplified
 future CI-ready design
 zero test changes
 
+Automation Fundamentals: Configuration via config.properties
+--
+config.properties (Remove Hardcoding properly)
+
+This approach encourages:
+
+- No Browser Hardcoding
+- No URL Hardcoding
+- No Credentials in code
+- CI/Jenkins-ready Design
+
+This mechanism matters because hardcoding all the stuff is maintenance nightmare
+
+"chrome"
+"https://the-internet.herokuapp.com"
+"tosmith"
+"SuperSecretPassword!"
+
+Because : 
+
+Code = behaviour
+Config = environment & data
+
+Java should read config, not contain it
+
+
+
+
 
 
 
