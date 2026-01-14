@@ -767,6 +767,14 @@ available everywhere
 simple for now
 
 
+Step 3: Update DriverFactory to use config
+--
+
+String browser = ConfigReader.get("browser");
+
+add this line for serving the same purpose.
+
+
 
 
 
