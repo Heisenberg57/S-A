@@ -785,6 +785,25 @@ in setup method : add - baseUrl = ConfigReader.get("baseurl");
 @AfterMethod(alwaysRun = true)
 
 
+Step 5 : Remove Credentials from Test Code
+--
+
+LoginPage loginPage = new LoginPage(driver, baseUrl);
+
+    loginPage.enterUsername(ConfigReader.get("username"));
+    loginPage.enterPassword(ConfigReader.get("password"));
+    loginPage.clickLogin();
+	
+
+What this approach makes us achieve
+
+1) browser switching without code changes
+2) environment switching without code changes
+3) clean tests
+4) CI-ready structure
+
+
+
 
 
 
