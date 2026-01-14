@@ -694,6 +694,117 @@ BaseTest simplified
 future CI-ready design
 zero test changes
 
+Automation Fundamentals: Configuration via config.properties
+--
+config.properties (Remove Hardcoding properly)
+
+This approach encourages:
+
+- No Browser Hardcoding
+- No URL Hardcoding
+- No Credentials in code
+- CI/Jenkins-ready Design
+
+This mechanism matters because hardcoding all the stuff is maintenance nightmare
+
+"chrome"
+"https://the-internet.herokuapp.com"
+"tosmith"
+"SuperSecretPassword!"
+
+Because : 
+
+Code = behaviour
+Config = environment & data
+
+Java should read config, not contain it
+
+
+Step 1 - Create config.properties
+--
+
+Path - src/test/resources/config.properties
+
+
+config.properties
+
+# Browser
+
+browser = chrome
+
+# Environment
+
+baseUrl = https://the-internet.herokuapp.com
+
+# Credentials
+
+username = tosmith
+password = SuperSecretPassword!
+
+# Wait
+
+explicitWait = 10
+
+
+
+Notes : 
+Simple key=value
+No quotes
+Human-readable
+CI-friendly
+
+
+STEP-2 Create ConfigReader Utility
+--
+
+src/test/java/utils/ConfigReader.java/utils/ConfigReader
+
+
+Why static?
+
+loaded once
+available everywhere
+simple for now
+
+
+Step 3: Update DriverFactory to use config
+--
+
+String browser = ConfigReader.get("browser");
+
+add this line for serving the same purpose.
+
+
+Step 4 : Update BaseTest.java
+--
+
+Add following lines of code:
+
+in setup method : add - baseUrl = ConfigReader.get("baseurl");
+
+@AfterMethod(alwaysRun = true)
+
+
+Step 5 : Remove Credentials from Test Code
+--
+
+LoginPage loginPage = new LoginPage(driver, baseUrl);
+
+    loginPage.enterUsername(ConfigReader.get("username"));
+    loginPage.enterPassword(ConfigReader.get("password"));
+    loginPage.clickLogin();
+	
+
+What this approach makes us achieve
+
+1) browser switching without code changes
+2) environment switching without code changes
+3) clean tests
+4) CI-ready structure
+
+
+
+
 
 
 
