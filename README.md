@@ -775,6 +775,16 @@ String browser = ConfigReader.get("browser");
 add this line for serving the same purpose.
 
 
+Step 4 : Update BaseTest.java
+--
+
+Add following lines of code:
+
+in setup method : add - baseUrl = ConfigReader.get("baseurl");
+
+@AfterMethod(alwaysRun = true)
+
+
 
 
 
