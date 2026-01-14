@@ -12,17 +12,22 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.LoginPage;
+import utils.ConfigReader;
 
 @Listeners(TestListener.class)
 public class LoginTest extends BaseTest {
 
 
+    private static final Logger log = LoggerFactory.getLogger(LoginTest.class);
+
     @Test
     public void loginWithValidCredentials(){
         LoginPage loginPage = new LoginPage(driver,baseUrl);
 
-        loginPage.enterUsername("tomsmith");
-        loginPage.enterpassword("SuperSecretPassword!");
+//        loginPage.enterUsername("tomsmith");
+//        loginPage.enterpassword("SuperSecretPassword!");
+        loginPage.enterUsername(ConfigReader.get("username"));
+        loginPage.enterpassword(ConfigReader.get("password"));
         loginPage.clickLogin();
 
         String message = loginPage.getFlashMessage();
