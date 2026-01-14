@@ -754,6 +754,18 @@ Human-readable
 CI-friendly
 
 
+STEP-2 Create ConfigReader Utility
+--
+
+src/test/java/utils/ConfigReader.java/utils/ConfigReader
+
+
+Why static?
+
+loaded once
+available everywhere
+simple for now
+
 
 
 
