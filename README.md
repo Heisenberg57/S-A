@@ -802,10 +802,27 @@ What this approach makes us achieve
 3) clean tests
 4) CI-ready structure
 
+Automation Fundamentals : TestNG XML & Suits
 
+Right now:
 
+Tests are run from Intellij
+@Listeners are being added on classes
+rely on IDE selection
 
+In real project 
 
+Jenkins runs tests 
+QA runs subsets
+smoke/regression/sanity are separated
+listeners & configs are centralized
+
+testng.xml is control center
+
+Core Idea :
+
+Java classes define tests
+testng.xml defines how & what to 
 
 
 
