@@ -854,6 +854,16 @@ runs LoginTest
 no need for @Listeners for annotaions
 
 
+Step 2: 
+--
+
+Remove this : @Listeners(TestListener.class)
+
+Now : 
+cleaner test classes
+single place for listener config
+easier scaling
+
 
 
 
