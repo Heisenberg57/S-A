@@ -825,6 +825,35 @@ Java classes define tests
 testng.xml defines how & what to 
 
 
+Step 1 : Create testng.xml
+--
+
+Path(project root)
+
+testng.xml
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Automation Suite">
+
+    <listeners>
+        <listener class-name="listeners.TestListener"/>
+    </listeners>
+
+    <test name="Login Tests">
+        <classes>
+            <class name="tests.LoginTest"/>
+        </classes>
+    </test>
+
+</suite>
+
+What does this :
+
+registers listener globally
+runs LoginTest
+no need for @Listeners for annotaions
+
+
 
 
 
