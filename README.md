@@ -865,6 +865,23 @@ single place for listener config
 easier scaling
 
 
+Step 3 :
+--
+
+In IntelliJ:
+
+Right-click testng.xml
+
+Run
+
+OR 
+
+Via Maven (preferred):
+
+mvn test -DsuiteXmlFile=testng.xml
+
+
+
 
 
 
