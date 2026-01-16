@@ -880,6 +880,21 @@ Via Maven (preferred):
 
 mvn test -DsuiteXmlFile=testng.xml
 
+Step 4 - Add More Tests to Suite
+--
+
+When more tests are added, we need to add in the class
+
+<classes>
+
+	<class name = "tests.loginTest" />
+	<class name = "tests.HerokuAppTests" />
+	
+</claases>
+
+No code changes required
+
+
 
 
 
