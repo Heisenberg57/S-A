@@ -920,6 +920,13 @@ In testng.xml
         <class name="tests.LoginTest"/>
     </classes>
 </test>
+
+Why this is powerful 
+- No IDE dependency
+- Easy CI integration
+- Clear Test Selection
+- Central listener control 
+- No annotation clutter
 	
 	
 
