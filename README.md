@@ -895,6 +895,34 @@ When more tests are added, we need to add in the class
 No code changes required
 
 
+Step 5 - Groups (VERY USEFUL)
+
+In Test Code
+
+@Test(groups = {"smoke"})
+public test
+
+
+@Test(groups={"regression"})
+public test
+
+
+In testng.xml
+
+<test name="Smoke Suite">
+    <groups>
+        <run>
+            <include name="smoke"/>
+        </run>
+    </groups>
+
+    <classes>
+        <class name="tests.LoginTest"/>
+    </classes>
+</test>
+	
+	
+
 
 
 
