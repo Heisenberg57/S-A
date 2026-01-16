@@ -20,7 +20,7 @@ public class LoginTest extends BaseTest {
 
     private static final Logger log = LoggerFactory.getLogger(LoginTest.class);
 
-    @Test
+    @Test(groups = {"smoke"})
     public void loginWithValidCredentials(){
         LoginPage loginPage = new LoginPage(driver,baseUrl);
 
