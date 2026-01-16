@@ -802,10 +802,133 @@ What this approach makes us achieve
 3) clean tests
 4) CI-ready structure
 
+Automation Fundamentals : TestNG XML & Suits
+
+Right now:
+
+Tests are run from Intellij
+@Listeners are being added on classes
+rely on IDE selection
+
+In real project 
+
+Jenkins runs tests 
+QA runs subsets
+smoke/regression/sanity are separated
+listeners & configs are centralized
+
+testng.xml is control center
+
+Core Idea :
+
+Java classes define tests
+testng.xml defines how & what to 
 
 
+Step 1 : Create testng.xml
+--
+
+Path(project root)
+
+testng.xml
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Automation Suite">
+
+    <listeners>
+        <listener class-name="listeners.TestListener"/>
+    </listeners>
+
+    <test name="Login Tests">
+        <classes>
+            <class name="tests.LoginTest"/>
+        </classes>
+    </test>
+
+</suite>
+
+What does this :
+
+registers listener globally
+runs LoginTest
+no need for @Listeners for annotaions
 
 
+Step 2: 
+--
+
+Remove this : @Listeners(TestListener.class)
+
+Now : 
+cleaner test classes
+single place for listener config
+easier scaling
+
+
+Step 3 :
+--
+
+In IntelliJ:
+
+Right-click testng.xml
+
+Run
+
+OR 
+
+Via Maven (preferred):
+
+mvn test -DsuiteXmlFile=testng.xml
+
+Step 4 - Add More Tests to Suite
+--
+
+When more tests are added, we need to add in the class
+
+<classes>
+
+	<class name = "tests.loginTest" />
+	<class name = "tests.HerokuAppTests" />
+	
+</claases>
+
+No code changes required
+
+
+Step 5 - Groups (VERY USEFUL)
+
+In Test Code
+
+@Test(groups = {"smoke"})
+public test
+
+
+@Test(groups={"regression"})
+public test
+
+
+In testng.xml
+
+<test name="Smoke Suite">
+    <groups>
+        <run>
+            <include name="smoke"/>
+        </run>
+    </groups>
+
+    <classes>
+        <class name="tests.LoginTest"/>
+    </classes>
+</test>
+
+Why this is powerful 
+- No IDE dependency
+- Easy CI integration
+- Clear Test Selection
+- Central listener control 
+- No annotation clutter
+	
+	
 
 
 
