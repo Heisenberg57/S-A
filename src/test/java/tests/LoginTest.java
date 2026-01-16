@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 import utils.ConfigReader;
 
-@Listeners(TestListener.class)
+//@Listeners(TestListener.class)
 public class LoginTest extends BaseTest {
 
 
