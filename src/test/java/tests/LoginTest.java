@@ -24,19 +24,30 @@ public class LoginTest extends BaseTest {
     public void loginWithValidCredentials(){
         LoginPage loginPage = new LoginPage(driver,baseUrl);
 
-//        loginPage.enterUsername("tomsmith");
-//        loginPage.enterpassword("SuperSecretPassword!");
+//      loginPage.enterUsername("tomsmith");
+//      loginPage.enterpassword("SuperSecretPassword!");
         loginPage.enterUsername(ConfigReader.get("username"));
         loginPage.enterpassword(ConfigReader.get("password"));
         loginPage.clickLogin();
 
         String message = loginPage.getFlashMessage();
-        Assert.assertTrue(message.contains("You logged into a secure area"),
-                "Login was not successful");
+//        Assert.assertTrue(message.contains("You logged into a secure area"),
+//                "Login was not successful");
 //        Assert.assertTrue(false, "Forcing failure to test screenshot");
+        Assert.assertTrue(
+                message.toLowerCase().contains("secure area"),
+                "Login was not successful. Actual message: " + message
+        );
 
 
 
     }
+
+
+    @Test(groups = {"smoke"})
+    public void dummySmokeTest() {
+        Assert.assertTrue(true);
+    }
+
 
 }

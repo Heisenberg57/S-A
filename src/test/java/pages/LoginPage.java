@@ -19,6 +19,7 @@ public class LoginPage {
     public LoginPage(WebDriver driver,String baseUrl){
         this.driver=driver;
         driver.get(baseUrl+LOGIN_PATH);
+        System.out.println("BASE URL = " + baseUrl);
         this.wait = new WaitUtils(driver);
     }
 
