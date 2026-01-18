@@ -7,20 +7,39 @@ import utils.ConfigReader;
 
 public class DriverFactory {
 
-    public static WebDriver createDriver(){
+    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-        String browser = ConfigReader.get("browser");
+    public static void initDriver(){
+        driver.set(new ChromeDriver());
+    }
 
-        if(browser == null){
-            browser = "chrome";
-        }
+    public static WebDriver getDriver(){
+        return driver.get();
+    }
 
-        switch (browser.toLowerCase()){
-            case "firefox":
-                return new FirefoxDriver();
-            case "chrome":
-            default:
-                return new ChromeDriver();
+    public static void quitDriver(){
+        if(driver.get()!=null){
+            driver.get().quit();
+            driver.remove();
         }
     }
+
+
+
+//    public static WebDriver createDriver(){
+//
+//        String browser = ConfigReader.get("browser");
+//
+//        if(browser == null){
+//            browser = "chrome";
+//        }
+//
+//        switch (browser.toLowerCase()){
+//            case "firefox":
+//                return new FirefoxDriver();
+//            case "chrome":
+//            default:
+//                return new ChromeDriver();
+//        }
+//    }
 }
