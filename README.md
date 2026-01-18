@@ -927,6 +927,94 @@ Why this is powerful
 - Clear Test Selection
 - Central listener control 
 - No annotation clutter
+
+
+Automation Fundamentals - Parallel Execution Basics (Real World Version)
+--
+
+*Question - why your framework works in a single thread but breaks the moment you scale*
+
+What does parallel execution mean :
+
+Multiple tests running at the same time, not one after another
+
+In real life
+
+Jenkins runs tests in parallel
+teams demand faster feedback
+frameworks MUST support concurrency
+
+Right now the framework assumes 
+
+protected WebDriver driver;
+
+This only works because tests run one at a time
+
+The moment two tests run in parallel
+
+1) Test A sets driver
+2) Test B overwrites driver
+3) Both tests fight over the same driver
+4) chaos
+
+
+*The only correct solution : ThreadLocal<WebDriver>*
+
+Think of ThreadLocal as
+
+Each Test gets its own private driver
+
+No sharing
+No overwriting
+No race conditions
+
+
+STEP 1 — Update DriverFactory (CORE CHANGE)
+--
+
+Add ThreadLocal instead of static driver
+
+STEP 2 - Update BaseTest
+--
+
+Update BeforMethod
+@BeforeMethod
+public void setUp() {
+    DriverFactory.initDriver();
+    driver = DriverFactory.getDriver();
+    driver.manage().window().maximize();
+    baseUrl = ConfigReader.get("baseUrl");
+}
+
+Update TearDown
+@AfterMethod(alwaysRun = true)
+public void tearDown() {
+    DriverFactory.quitDriver();
+}
+
+Step 3: Enable Parallel execution in testng.xml
+--
+
+Mode	Meaning
+methods	each @Test runs in parallel
+classes	one class per thread
+tests	one <test> per thread
+
+STEP 4 — Prove it’s really parallel
+--
+
+System.out.println(
+    "Thread ID = " + Thread.currentThread().getId()
+);
+
+
+
+
+
+
+
+
+
 	
 	
 
