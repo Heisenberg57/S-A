@@ -927,6 +927,50 @@ Why this is powerful
 - Clear Test Selection
 - Central listener control 
 - No annotation clutter
+
+
+Automation Fundamentals - Parallel Execution Basics (Real World Version)
+--
+
+*Question - why your framework works in a single thread but breaks the moment you scale*
+
+What does parallel execution mean :
+
+Multiple tests running at the same time, not one after another
+
+In real life
+
+Jenkins runs tests in parallel
+teams demand faster feedback
+frameworks MUST support concurrency
+
+Right now the framework assumes 
+
+protected WebDriver driver;
+
+This only works because tests run one at a time
+
+The moment two tests run in parallel
+
+1) Test A sets driver
+2) Test B overwrites driver
+3) Both tests fight over the same driver
+4) chaos
+
+
+*The only correct solution : ThreadLocal<WebDriver>*
+
+Think of ThreadLocal as
+
+Each Test gets its own private driver
+
+No sharing
+No overwriting
+No race conditions
+
+
+
+
 	
 	
 
