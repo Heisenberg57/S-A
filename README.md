@@ -992,6 +992,21 @@ public void tearDown() {
     DriverFactory.quitDriver();
 }
 
+Step 3: Enable Parallel execution in testng.xml
+--
+
+Mode	Meaning
+methods	each @Test runs in parallel
+classes	one class per thread
+tests	one <test> per thread
+
+STEP 4 — Prove it’s really parallel
+--
+
+System.out.println(
+    "Thread ID = " + Thread.currentThread().getId()
+);
+
 
 
 
