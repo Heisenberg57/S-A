@@ -17,16 +17,19 @@ public class BaseTest {
 //        driver = new ChromeDriver();
 //        driver.manage().window().maximize();  old hard coded setup for driver
 
-        driver= DriverFactory.createDriver();
+//        driver= DriverFactory.createDriver();
+//        driver.manage().window().maximize();
+//        baseUrl = ConfigReader.get("baseUrl");
+
+        DriverFactory.initDriver();
+        driver=DriverFactory.getDriver();
         driver.manage().window().maximize();
         baseUrl = ConfigReader.get("baseUrl");
     }
 
     @AfterMethod(alwaysRun = true)
     public void tearDown(){
-        if (driver!=null){
-            driver.quit();
-        }
+        DriverFactory.quitDriver();
     }
 
     public WebDriver getDriver() {

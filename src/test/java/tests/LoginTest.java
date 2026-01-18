@@ -23,6 +23,10 @@ public class LoginTest extends BaseTest {
     @Test(groups = {"smoke"})
     public void loginWithValidCredentials(){
         LoginPage loginPage = new LoginPage(driver,baseUrl);
+        System.out.println(
+                "Thread ID = " + Thread.currentThread().getId()
+        );
+
 
 //      loginPage.enterUsername("tomsmith");
 //      loginPage.enterpassword("SuperSecretPassword!");
