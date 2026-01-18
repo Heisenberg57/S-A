@@ -969,6 +969,35 @@ No overwriting
 No race conditions
 
 
+STEP 1 — Update DriverFactory (CORE CHANGE)
+--
+
+Add ThreadLocal instead of static driver
+
+STEP 2 - Update BaseTest
+--
+
+Update BeforMethod
+@BeforeMethod
+public void setUp() {
+    DriverFactory.initDriver();
+    driver = DriverFactory.getDriver();
+    driver.manage().window().maximize();
+    baseUrl = ConfigReader.get("baseUrl");
+}
+
+Update TearDown
+@AfterMethod(alwaysRun = true)
+public void tearDown() {
+    DriverFactory.quitDriver();
+}
+
+
+
+
+
+
+
 
 
 	
