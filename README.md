@@ -1074,10 +1074,11 @@ Make some updates relevant to the extent reporting/ExtentManager
 Step 5 : Register listener via testng.xml
 --
 
+*
 <listeners>
 	<listener class-name="listeners.TestListener"/>
 </listeners>
-
+*
 
 Step 6 : Verify report generation
 --
