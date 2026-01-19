@@ -1008,6 +1008,32 @@ System.out.println(
 );
 
 
+Automation fundamentals : Test Reporting ( Extent Reports - Real world problems)
+--
+
+*If a test fails in CI and nobody can see what happened then then
+the test didn't really run.*
+
+Why this matters:
+
+Console logs
+Screenshots on failure
+No readable report
+
+In real teams
+
+Managers open reports
+Devs read failure steps
+QA leads track trends
+Jenkins archieves HTML
+
+*Extent Reports is industry standard for selenium + TestNG*
+
+Core design rule - important
+Listeners should
+
+
+
 
 
 
