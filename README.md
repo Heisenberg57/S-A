@@ -1053,6 +1053,24 @@ Singleton :
 2. no duplication
 
 
+Step 3 : Update TestListener to log to extent
+--
+
+Add @Override
+    public void onTestStart(ITestResult result) {
+        ExtentTest extentTest =
+                extent.createTest(result.getMethod().getMethodName());
+        test.set(extentTest);
+    }
+	
+
+Step 4: Update ScreenshotUtils to return path
+--
+
+Make some updates relevant to the extent reporting/ExtentManager
+
+
+
 
 
 
