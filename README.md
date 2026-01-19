@@ -1033,6 +1033,28 @@ Core design rule - important
 Listeners should
 
 
+Step 1 - Add extent dependency
+--
+
+In pom.xml
+
+<artifactId>extentreports</artifactId>
+
+Reload Maven
+
+Step 2 : Create ExtentManager
+--
+
+Path - src/test/java/reporting/ExtentManager.java/reporting/ExtentManager.java
+
+Singleton :
+
+1. one report per run
+2. no duplication
+
+
+
+
 
 
 
