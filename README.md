@@ -1071,6 +1071,35 @@ Make some updates relevant to the extent reporting/ExtentManager
 
 
 
+Step 5 : Register listener via testng.xml
+--
+
+<listeners>
+	<listener class-name="listeners.TestListener"/>
+</listeners>
+
+
+Step 6 : Verify report generation
+--
+
+1) Run suite via testng.xml
+2) Break one test intentionally
+3) Open
+
+bash
+
+reports/extent-report.html
+
+You should see:
+
+Test name 
+PASS/FAIL
+Stack trace
+Screenshot attached
+
+
+
+
 
 
 
