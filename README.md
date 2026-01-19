@@ -1098,6 +1098,15 @@ Stack trace
 Screenshot attached
 
 
+Why this design is senior-level
+
+- ThreadLocal for parallel safety
+- Listener-driven reporting/ExtentManager
+- Screenshot integration
+- HTML artifact generation
+- CI- Friendly output folder
+
+
 
 
 
