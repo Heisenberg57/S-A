@@ -1074,11 +1074,10 @@ Make some updates relevant to the extent reporting/ExtentManager
 Step 5 : Register listener via testng.xml
 --
 
-*
-<listeners>
-	<listener class-name="listeners.TestListener"/>
-</listeners>
-*
+
+
+<img width="421" height="75" alt="image" src="https://github.com/user-attachments/assets/aa86d918-3f15-4fff-8d0c-98a560995d93" />
+
 
 Step 6 : Verify report generation
 --
