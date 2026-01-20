@@ -10,7 +10,7 @@ import java.nio.file.Files;
 
 public class ScreenshotUtils {
 
-    public static void takeScreenshot(WebDriver driver, String testName){
+    public static String takeScreenshot(WebDriver driver, String testName){
         try{
             TakesScreenshot ts = (TakesScreenshot) driver;
             File source = ts.getScreenshotAs(OutputType.FILE);
@@ -20,9 +20,12 @@ public class ScreenshotUtils {
             Files.createDirectories(destination.getParentFile().toPath());
             Files.copy(source.toPath(),destination.toPath());
 
+            return destination.getAbsolutePath();
+
         }
         catch (IOException e){
             System.out.println("Failed to capture screenshot"+e.getMessage());
+            return null;
         }
 
 
