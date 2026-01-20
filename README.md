@@ -1008,6 +1008,110 @@ System.out.println(
 );
 
 
+Automation fundamentals : Test Reporting ( Extent Reports - Real world problems)
+--
+
+*If a test fails in CI and nobody can see what happened then then
+the test didn't really run.*
+
+Why this matters:
+
+Console logs
+Screenshots on failure
+No readable report
+
+In real teams
+
+Managers open reports
+Devs read failure steps
+QA leads track trends
+Jenkins archieves HTML
+
+*Extent Reports is industry standard for selenium + TestNG*
+
+Core design rule - important
+Listeners should
+
+
+Step 1 - Add extent dependency
+--
+
+In pom.xml
+
+<artifactId>extentreports</artifactId>
+
+Reload Maven
+
+Step 2 : Create ExtentManager
+--
+
+Path - src/test/java/reporting/ExtentManager.java/reporting/ExtentManager.java
+
+Singleton :
+
+1. one report per run
+2. no duplication
+
+
+Step 3 : Update TestListener to log to extent
+--
+
+Add @Override
+    public void onTestStart(ITestResult result) {
+        ExtentTest extentTest =
+                extent.createTest(result.getMethod().getMethodName());
+        test.set(extentTest);
+    }
+	
+
+Step 4: Update ScreenshotUtils to return path
+--
+
+Make some updates relevant to the extent reporting/ExtentManager
+
+
+
+Step 5 : Register listener via testng.xml
+--
+
+
+
+<img width="421" height="75" alt="image" src="https://github.com/user-attachments/assets/aa86d918-3f15-4fff-8d0c-98a560995d93" />
+
+
+Step 6 : Verify report generation
+--
+
+1) Run suite via testng.xml
+2) Break one test intentionally
+3) Open
+
+bash
+
+reports/extent-report.html
+
+You should see:
+
+Test name 
+PASS/FAIL
+Stack trace
+Screenshot attached
+
+
+Why this design is senior-level
+
+- ThreadLocal for parallel safety
+- Listener-driven reporting/ExtentManager
+- Screenshot integration
+- HTML artifact generation
+- CI- Friendly output folder
+
+
+
+
+
+
+
 
 
 
