@@ -42,6 +42,8 @@ public class LoginTest extends BaseTest {
                 message.toLowerCase().contains("secure area"),
                 "Login was not successful. Actual message: " + message
         );
+        Assert.fail("Intentional failure");
+
 
 
 
